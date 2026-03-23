@@ -1,0 +1,303 @@
+.container {
+  width: 100%;
+  padding: 60px 0; /* remove side padding so video can be full width */
+  background-image: url("/bg-checkedin.avif");
+}
+
+
+.home-page {
+  background: linear-gradient(135deg, #0a2540, #1e3a8a, #2563eb);
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #f8fafc;
+}
+
+.heading-main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+  text-align: center;
+  margin-bottom: -100px;
+}
+
+.heading-main h1 {
+  font-size: 70px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.heading-main p {
+  font-size: 20px;
+  line-height: 2;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 100;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+
+/* Section styling (optional small polish) */
+
+.get-started-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* full width videos */
+.team,
+.video-healthy {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.team video,
+.video-healthy video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* role cards */
+.role-card {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  padding: 90px 20px;
+  background-color: #ffffff;
+}
+
+.role-item {
+  max-width: 320px;
+  text-align: center;
+}
+
+.role-item img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.role-item h3 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 14px;
+  color: #0234aa;
+}
+
+.role-item p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #00132e;
+}
+
+/* screenshot section */
+.manger-staff {
+  width: 100%;
+  margin-top: 70px;
+  background-color: #e2e8f0;
+  padding: 40px 0;
+}
+
+.image1 {
+  width: 100%;
+}
+
+.image1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* responsive */
+@media (max-width: 900px) {
+  .heading-main h1 {
+    font-size: 40px;
+  }
+
+  .heading-main p {
+    font-size: 17px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-card {
+    gap: 50px;
+    padding: 70px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading-main {
+    padding: 60px 16px 40px;
+  }
+
+  .heading-main h1 {
+    font-size: 32px;
+  }
+
+  .heading-main p {
+    font-size: 16px;
+  }
+
+  .get-started-button {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .role-item img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .features {
+    padding: 70px 16px;
+  }
+
+  .features h2 {
+    font-size: 32px;
+  }
+}
+
+.features {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 35px 25px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.feature-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dbeafe;
+  font-weight: 300;
+}
+
+/* Hover effect */
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+.faqs {
+  background: #ffffff;
+  padding: 80px 10%;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.faqs h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #022169;
+  font-weight: 300;
+}
+
+.faq-item {
+  background: #ffffff;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.faq-item h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  color: #001a44;
+}
+
+.faq-item p {
+  font-size: 18px;
+  color: #023378;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+
+
+
+.get-started-button {
+  margin-top: 15px;
+  padding: 12px 18px;
+  background-color: #2181ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.get-started-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.get-started-button:hover {
+  background-color: #1a6fe0;
+}
+
+
+
+
