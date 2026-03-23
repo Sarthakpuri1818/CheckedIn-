@@ -1,5 +1,5 @@
 .footer {
-  background-color: #001730; /* deep modern navy */
+  background-color: #001730;
   color: #f8fafc;
   padding: 60px 20px 30px 20px;
   margin-top: -10px;
@@ -34,13 +34,12 @@
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-
 /* bottom copyright */
 .footer-bottom {
   margin-top: 20px;
   padding-top: 10px;
 
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 300;
 
