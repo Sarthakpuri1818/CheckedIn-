@@ -102,7 +102,11 @@ export default function ManagerDashboard() {
     return normalizedStatus === "denied" || normalizedStatus === "rejected";
   });
 
-  const renderTable = (items: Checkin[], showActions = false) => (
+  const renderTable = (
+    items: Checkin[],
+    showActions = false,
+    showDeleteOnly = false
+  ) => (
     <table>
       <thead>
         <tr>
@@ -110,7 +114,7 @@ export default function ManagerDashboard() {
           <th>Check-in Time</th>
           <th>Status</th>
           <th>Comment</th>
-          {showActions && <th>Action</th>}
+          {(showActions || showDeleteOnly) && <th>Action</th>}
         </tr>
       </thead>
 
@@ -170,11 +174,21 @@ export default function ManagerDashboard() {
                   </button>
                 </td>
               )}
+
+              {showDeleteOnly && (
+                <td>
+                  <button onClick={() => deleteCheckin(item._id)}>
+                    Delete
+                  </button>
+                </td>
+              )}
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan={showActions ? 5 : 4}>No records found</td>
+            <td colSpan={showActions || showDeleteOnly ? 5 : 4}>
+              No records found
+            </td>
           </tr>
         )}
       </tbody>
@@ -196,12 +210,13 @@ export default function ManagerDashboard() {
 
       <div className="checkin-section">
         <h2>Approved Check-ins </h2>
-        {renderTable(approvedCheckins)}
+        {renderTable(approvedCheckins, false, true)}
+      
       </div>
 
       <div className="checkin-section">
         <h2>Rejected Check-ins </h2>
-        {renderTable(rejectedCheckins)}
+        {renderTable(rejectedCheckins, false, true)}
       </div>
 
       <button onClick={() => (window.location.href = "/")}>
