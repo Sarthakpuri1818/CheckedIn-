@@ -21,6 +21,15 @@ export default function ManagerDashboard() {
   const [toastMessage, setToastMessage]= useState("");
   const [toastType, setToastType]= useState("");
 
+  const showToast = (message: string, type: "success" | "error") => {
+    setToastMessage(message);
+    setToastType(type);
+
+    setTimeout(() => {
+      setToastMessage("");
+    }, 3000);
+  };
+
 
   const fetchCheckins = async () => {
     try {
@@ -63,39 +72,22 @@ export default function ManagerDashboard() {
       console.log("Update response:", data);
 
       if (!response.ok) {
-        setToastMessage(data.error || "Failed to update check-in");
-        setToastType("error");
-        setTimeout(() => {
-          setToastMessage("");
-        }, 3000);
-
-        setToastMessage(
-          status === "Approved"
-            ? "Check-in approved successfully!"
-            : "Check-in rejected successfully!"
-        );
-        setToastType("success");
-        setTimeout(() => {
-          setToastMessage("");
-        }, 3000
-
-        )
-        
+        showToast(data.error || "Failed to update check-in", "error");
         console.error(data.error || "Failed to update check-in");
         return;
       }
 
       await fetchCheckins();
+      showToast(
+        status === "Approved"
+          ? "Check-in approved successfully!"
+          : "Check-in rejected successfully!",
+        "success"
+      );
     } catch (error) {
       console.error("Error updating check-in:", error);
-      setToastMessage("An error occurred while updating the check-in");
-      setToastType("error");
-      setTimeout(() => {
-        setToastMessage("");
-
-      }, 3000);
+      showToast("An error occurred while updating the check-in", "error");
     }
-
   };
 
   const deleteCheckin = async (id: string) => {
@@ -108,13 +100,16 @@ export default function ManagerDashboard() {
       console.log("Delete response:", data);
 
       if (!response.ok) {
+        showToast(data.error || "Failed to delete check-in", "error");
         console.error(data.error || "Failed to delete check-in");
         return;
       }
 
       await fetchCheckins();
+      showToast("Check-in deleted successfully!", "success");
     } catch (error) {
       console.error("Error deleting check-in:", error);
+      showToast("An error occurred while deleting the check-in", "error");
     }
   };
 
@@ -226,15 +221,14 @@ export default function ManagerDashboard() {
     </table>
   );
 
-{toastMessage && (
-  <div className={`toast-message ${toastType}`}>
-    {toastMessage}
-  </div>
-)}
-
-
   return (
     <div className="manager-dashboard">
+      {toastMessage && (
+        <div className={`toast-message ${toastType}`}>
+          {toastMessage}
+        </div>
+      )}
+
       <h1>Welcome, Manager!</h1>
       <p>
         It's great to see you today 🙋🏻‍♂️ Here you can manage your team and review
