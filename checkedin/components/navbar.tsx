@@ -22,7 +22,7 @@ export default function Navbar(){
                 <Link href="/" >Home</Link>
                 <Link href="/register">Register</Link>
                   <Link href="/staff">Login</Link>
-                  <Link href="/aboutus">About Us</Link>
+                  {/* <Link href="/aboutus">About Us</Link> */}
 
   
 
