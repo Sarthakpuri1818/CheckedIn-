@@ -25,10 +25,10 @@ export default function Home(){
 </section>
 
       <div className="team">
-        <video width="800" autoPlay muted loop playsInline>
-          <source src="/smartteamsforcheckedin.mp4" type="video/mp4" />
-        </video>
-      </div>
+  <video autoPlay muted loop playsInline preload="metadata">
+    <source src="/smartteamsforcheckedin.mp4" type="video/mp4" />
+  </video>
+</div>
 
     
 
@@ -107,11 +107,10 @@ export default function Home(){
       
 </section>
 <div className="video-healthy">
-        <video width="800" autoPlay muted loop playsInline>
-          <source src="/Benefits For Using Checked In (1).mp4" type="video/mp4" />
-        </video>
-
-      </div>
+  <video autoPlay muted loop playsInline preload="metadata">
+    <source src="/benefits.mp4" type="video/mp4" />
+  </video>
+</div>
 
      
       <div className="faqs">
@@ -142,11 +141,11 @@ export default function Home(){
     </p>
   </div>
 
-   <div className="video-healthy">
-        < video width="800" autoPlay muted loop playsInline>
-        <source src="/Simple For Employees.mp4" type="video/mp4" />
-        </video>
-      </div>
+ <div className="video-healthy">
+  <video autoPlay muted loop playsInline preload="metadata">
+    <source src="/simple.mp4" type="video/mp4" />
+  </video>
+</div>
 </div>
 
 
