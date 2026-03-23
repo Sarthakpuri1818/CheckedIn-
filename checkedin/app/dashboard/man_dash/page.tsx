@@ -16,6 +16,12 @@ export default function ManagerDashboard() {
   const [checkins, setCheckins] = useState<Checkin[]>([]);
   const [comments, setComments] = useState<{ [key: string]: string }>({});
 
+  // adding toast notifications for better user feedback
+
+  const [toastMessage, setToastMessage]= useState("");
+  const [toastType, setToastType]= useState("");
+
+
   const fetchCheckins = async () => {
     try {
       const response = await fetch("/api/staffcheckin");
@@ -57,6 +63,24 @@ export default function ManagerDashboard() {
       console.log("Update response:", data);
 
       if (!response.ok) {
+        setToastMessage(data.error || "Failed to update check-in");
+        setToastType("error");
+        setTimeout(() => {
+          setToastMessage("");
+        }, 3000);
+
+        setToastMessage(
+          status === "Approved"
+            ? "Check-in approved successfully!"
+            : "Check-in rejected successfully!"
+        );
+        setToastType("success");
+        setTimeout(() => {
+          setToastMessage("");
+        }, 3000
+
+        )
+        
         console.error(data.error || "Failed to update check-in");
         return;
       }
@@ -64,7 +88,14 @@ export default function ManagerDashboard() {
       await fetchCheckins();
     } catch (error) {
       console.error("Error updating check-in:", error);
+      setToastMessage("An error occurred while updating the check-in");
+      setToastType("error");
+      setTimeout(() => {
+        setToastMessage("");
+
+      }, 3000);
     }
+
   };
 
   const deleteCheckin = async (id: string) => {
@@ -194,6 +225,13 @@ export default function ManagerDashboard() {
       </tbody>
     </table>
   );
+
+{toastMessage && (
+  <div className={`toast-message ${toastType}`}>
+    {toastMessage}
+  </div>
+)}
+
 
   return (
     <div className="manager-dashboard">
