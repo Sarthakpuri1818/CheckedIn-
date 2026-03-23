@@ -7,6 +7,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import "./navbar.css";
 
 
@@ -17,13 +18,12 @@ export default function Navbar(){
 //creating a function where it hides the navbar when user logs in to dashboard
 
 const [isLoggedIn, setIsLoggedIn]= useState(false);
-const pathname = window.location.pathname;
+const pathname = usePathname();
 useEffect(()=>{
-    const loggedIn = document.cookie.includes("staffUser")||
-    document.cookie.includes("token");
+    const loggedIn = document.cookie.includes("user=");
     setIsLoggedIn(loggedIn);
 
-},[])
+},[pathname])
 
 const handleLogout = async()=>{
     try{
