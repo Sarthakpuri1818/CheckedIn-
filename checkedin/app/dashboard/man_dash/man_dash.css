@@ -1,170 +1,176 @@
-
+.manager-dashboard {
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+  background: linear-gradient(135deg, #f4f8ff, #e9f1ff);
+  font-family: "IBM Plex Sans", sans-serif;
+}
 
 .manager-dashboard h1 {
   text-align: center;
-  font-size: 30px;
-  font-weight: 400;
-  color: #2b0b67;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #0b1f44;
   margin-bottom: 12px;
 }
 
 .manager-dashboard > p {
   text-align: center;
-  font-size: 20px;
-  color: #0b1e42;
+  font-size: 1rem;
+  color: #5b6475;
   max-width: 600px;
-  margin: 0 auto 30px auto;
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-.manager-dashboard {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
 }
 
 .checkin-section {
+  max-width: 1200px;
+  margin: 0 auto 28px;
   background: #ffffff;
-  border-radius: 20px;
-  padding: 24px;
-  margin-top: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
 }
 
 .checkin-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #1e293b;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+  color: #0b1f44;
   font-weight: 700;
 }
 
 .checkin-section table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
+  min-width: 760px;
+  background: #ffffff;
 }
 
 .checkin-section thead {
-  background: #2563eb;
-  color: white;
+  background: #eef4ff;
 }
 
 .checkin-section th {
-  padding: 16px;
+  padding: 15px 16px;
   text-align: left;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0b1f44;
+  border-bottom: 1px solid #dbe5f3;
 }
 
 .checkin-section td {
-  padding: 16px;
-  border-bottom: 1px solid #e5e7eb;
-  font-size: 15px;
+  padding: 15px 16px;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 0.95rem;
   color: #334155;
   vertical-align: middle;
 }
 
 .checkin-section tbody tr:hover {
-  background: #f8fafc;
-  transition: 0.3s ease;
+  background: #f8fbff;
 }
 
 .checkin-section input {
   width: 100%;
-  max-width: 220px;
-  padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
+  min-width: 180px;
+  max-width: 240px;
+  padding: 11px 13px;
+  border: 1px solid #d9e2f2;
+  border-radius: 12px;
   outline: none;
-  font-size: 14px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.92rem;
+  color: #0f172a;
+  background: #ffffff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .checkin-section input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: #0051ff;
+  box-shadow: 0 0 0 4px rgba(0, 81, 255, 0.12);
 }
 
-.checkin-section button {
+.checkin-section td button {
   border: none;
   padding: 10px 14px;
   margin-right: 8px;
   margin-bottom: 6px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
 }
 
-.checkin-section button:hover {
+.checkin-section td button:hover {
   transform: translateY(-2px);
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
-.checkin-section button:nth-child(1) {
+.checkin-section td button:first-child {
   background: #16a34a;
   color: white;
 }
 
-.checkin-section button:nth-child(2) {
+.checkin-section td button:nth-child(2) {
   background: #dc2626;
   color: white;
 }
 
-.checkin-section button:nth-child(3) {
+.checkin-section td button:nth-child(3) {
   background: #475569;
   color: white;
 }
 
 .manager-dashboard > button {
-  margin-top: 30px;
-  background: #2563eb;
+  display: block;
+  margin: 10px auto 0;
+  background: #0051ff;
   color: white;
   border: none;
   padding: 14px 22px;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 10px 24px rgba(0, 81, 255, 0.18);
 }
 
 .manager-dashboard > button:hover {
-  background: #1d4ed8;
+  background: #003ec7;
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
   .manager-dashboard {
-    padding: 16px;
+    padding: 24px 14px 40px;
+  }
+
+  .manager-dashboard h1 {
+    font-size: 1.8rem;
+  }
+
+  .manager-dashboard > p {
+    font-size: 0.95rem;
   }
 
   .checkin-section {
     padding: 18px;
+    border-radius: 18px;
   }
 
   .checkin-section h2 {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
 
   .checkin-section th,
   .checkin-section td {
     padding: 12px;
-    font-size: 14px;
+    font-size: 0.88rem;
   }
 
   .checkin-section input {
-    max-width: 100%;
-  }
-
-  .checkin-section button {
-    width: 100%;
-    margin-right: 0;
+    min-width: 160px;
   }
 }
