@@ -10,42 +10,35 @@ export default function StaffPage() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  
+  // created a handle login function to handle the functionality
 
-  
-// created a handle login function to handle the functionality
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-const handleLogin = async(e: React.FormEvent<HTMLFormElement>)=>{
-  e.preventDefault();
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
 
-  const res= await fetch("/api/login",{
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
+      body: JSON.stringify({ email, password }),
+    });
 
-    body: JSON.stringify({ email, password }),
-  });
+    const data = await res.json();
+    console.log("LOGIN RESPONSE:", data);
 
-  const data = await res.json();
-  console.log("LOGIN RESPONSE:", data);
-
-  if(res.ok){
-
-   if (data.user.role === "staff") {
-  router.push("/dashboard/staff");
-} else if (data.user.role === "manager") {
-  router.push("/dashboard/man_dash");
-} else {
-  alert("Unknown role");
-} 
-
-  }else{
-    alert(data.message || "Login failed");
-    
-  }
-
-}
+    if (res.ok) {
+      if (data.user.role === "staff") {
+        router.push("/dashboard/staff");
+      } else if (data.user.role === "manager") {
+        router.push("/dashboard/man_dash");
+      } else {
+        alert("Unknown role");
+      }
+    } else {
+      alert(data.message || "Login failed");
+    }
+  };
 
   return (
     <div className="staff-container">

@@ -38,11 +38,11 @@ export default function ManagerPage() {
 
   return (
     <div className="manager-container">
-     <div className="manager-video">
-  <video autoPlay muted loop playsInline preload="metadata">
-    <source src="/managerlogin.mp4" type="video/mp4" />
-  </video>
-</div>
+      <div className="manager-video">
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src="/managerlogin.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div className="manager-form-box">
         <h1>Manager Login</h1>
         <p>Login to continue to your dashboard</p>
