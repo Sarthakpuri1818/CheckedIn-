@@ -91,9 +91,16 @@ export default function ManagerDashboard() {
     fetchCheckins();
   }, []);
 
-  const pendingCheckins = checkins.filter((item) => item.status === "Pending");
-  const approvedCheckins = checkins.filter((item) => item.status === "Approved");
-  const rejectedCheckins = checkins.filter((item) => item.status === "Denied");
+  const pendingCheckins = checkins.filter(
+    (item) => item.status?.toLowerCase() === "pending"
+  );
+  const approvedCheckins = checkins.filter(
+    (item) => item.status?.toLowerCase() === "approved"
+  );
+  const rejectedCheckins = checkins.filter((item) => {
+    const normalizedStatus = item.status?.toLowerCase();
+    return normalizedStatus === "denied" || normalizedStatus === "rejected";
+  });
 
   const renderTable = (items: Checkin[], showActions = false) => (
     <table>
@@ -120,10 +127,10 @@ export default function ManagerDashboard() {
                   <input
                     value={comments[item._id] || ""}
                     onChange={(e) =>
-                      setComments({
-                        ...comments,
+                      setComments((currentComments) => ({
+                        ...currentComments,
                         [item._id]: e.target.value,
-                      })
+                      }))
                     }
                     placeholder="Add comment"
                   />
@@ -209,4 +216,3 @@ export default function ManagerDashboard() {
 
 
             
-
