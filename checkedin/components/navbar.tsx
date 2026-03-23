@@ -7,7 +7,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation"; // created to get current path of the page and hide navbar
 import "./navbar.css";
 
 
@@ -42,11 +42,8 @@ const handleLogout = async()=>{
     }
 }
 
-  // hide navbar on dashboard pages
-  if (
-    pathname === "/dashboard/staff" ||
-    pathname === "/dashboard/man_dash"
-  ) {
+  // hide navbar on all dashboard pages existing on 
+  if (pathname?.startsWith("/dashboard")) {
     return null;
   }
 
