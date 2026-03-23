@@ -17,6 +17,7 @@ export default function Navbar(){
 //creating a function where it hides the navbar when user logs in to dashboard
 
 const [isLoggedIn, setIsLoggedIn]= useState(false);
+const pathname = window.location.pathname;
 useEffect(()=>{
     const loggedIn = document.cookie.includes("staffUser")||
     document.cookie.includes("token");
@@ -41,6 +42,13 @@ const handleLogout = async()=>{
     }
 }
 
+  // hide navbar on dashboard pages
+  if (
+    pathname === "/dashboard/staff" ||
+    pathname === "/dashboard/man_dash"
+  ) {
+    return null;
+  }
 
 
 
