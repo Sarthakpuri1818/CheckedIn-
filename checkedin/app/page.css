@@ -38,7 +38,7 @@
 
 /* Section styling (optional small polish) */
 .button-group {
-  display: flex;
+  /* display: flex; */
   gap: 15px;
 }
 
