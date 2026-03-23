@@ -30,6 +30,11 @@ export default function Register() {
 
       if (res.ok) {
         alert("Registered successfully");
+        // clearing all input fields after succesfull registeration
+        setName("");
+        setEmail("");
+        setPassword("");
+        setRole("staff");
       } else {
         alert(data.message || "Registration failed");
       }
