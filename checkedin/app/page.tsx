@@ -23,7 +23,7 @@ export default function Home(){
     <button className="get-started-button">Let's Get Started</button>
   </Link>
 
-  <Link href="/about">
+  <Link href="/aboutus">
     <button className="get-started-button">About Us</button>
   </Link>
 
