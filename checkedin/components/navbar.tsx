@@ -73,7 +73,7 @@ const handleLogout = async()=>{
                 {isLoggedIn && (
                     <>
                         <Link href="/dashboard/staff">Dashboard</Link>
-                        <button className="logout-button" onClick={handleLogout}>Logout</button>
+                        <button className="button-group" onClick={handleLogout}>Logout</button>
                     </>
                 )}
 
