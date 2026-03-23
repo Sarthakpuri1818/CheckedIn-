@@ -37,6 +37,11 @@
 
 
 /* Section styling (optional small polish) */
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
 
 .get-started-button {
   background-color: #2563eb;

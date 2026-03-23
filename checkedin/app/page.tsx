@@ -19,13 +19,15 @@ export default function Home(){
     </p>
   </div>
 
-  <Link href="/register">
-    <button className="get-started-button">Let's Get Started</button>
+<div className="button-group">
+  <Link href="/register" className="get-started-button">
+     Get Started
   </Link>
 
- <Link href="/aboutus">
-  <button className="get-started-button">About Us</button>
-</Link>
+  <Link href="/aboutus" className="get-started-button">
+    About Us
+  </Link>
+</div>
 
 </section>
 
