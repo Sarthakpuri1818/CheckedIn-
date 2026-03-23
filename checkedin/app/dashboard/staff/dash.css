@@ -144,3 +144,11 @@
 .home-btn:hover {
   background:#2060f7;
 }
+
+button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: blue;
+  
+}
