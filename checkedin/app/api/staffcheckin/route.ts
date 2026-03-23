@@ -101,7 +101,7 @@ export async function POST() {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    const existingCheckin = await Checkin.findOne({ staffId, status: "pending" });
+    const existingCheckin = await Checkin.findOne({ staffId, status: "Pending" });
     if (existingCheckin) {
       return NextResponse.json(
         { error: "You have already checked in and it's pending approval." },
@@ -112,7 +112,7 @@ export async function POST() {
     const newCheckin = new Checkin({
       staffId,
       staffName: staffUser.name,
-      status: "pending",
+      status: "Pending",
       comment: "",
       approvedBy: "",
     });
