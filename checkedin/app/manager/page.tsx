@@ -39,7 +39,7 @@ export default function ManagerPage() {
   return (
     <div className="manager-container">
       <div className="manager-video">
-        <video width="700" autoPlay muted loop>
+        <video autoPlay muted loop playsInline preload="metadata">
           <source src="/Welcome Managers.mp4" type="video/mp4" />
         </video>
       </div>
