@@ -1,9 +1,4 @@
-.manager-dashboard {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #eef4ff, #ffffff);
-  padding: 30px 24px;
-  font-family: "IBM Plex Sans", sans-serif;
-}
+
 
 .manager-dashboard h1 {
   text-align: center;
@@ -23,166 +18,153 @@
   font-weight: 300;
 }
 
-.checkin-list {
+.manager-dashboard {
   max-width: 1200px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 30px;
+  margin: 40px auto;
   padding: 20px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
 }
 
-.checkin-list h2 {
-  font-size: 20px;
-  font-weight: 350;
-  color: #2b0b67;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: "IBM Plex Sans", sans-serif;
+.checkin-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
 }
 
-.checkin-list table {
+.checkin-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.checkin-section table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 14px;
   overflow: hidden;
 }
 
-.checkin-list thead {
-  background: #2181ff;
+.checkin-section thead {
+  background: #2563eb;
   color: white;
 }
 
-.checkin-list th {
-  padding: 16px 14px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "IBM Plex Sans", sans-serif;
+.checkin-section th {
+  padding: 16px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.checkin-list td {
-  padding: 16px 14px;
-  border-bottom: 2px solid #e5e7eb;
+.checkin-section td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
   font-size: 15px;
-  color: #030e1e;
-  font-weight: 400;
-  text-align: center;
+  color: #334155;
   vertical-align: middle;
-  font-family: "IBM Plex Sans", sans-serif;
 }
 
-.checkin-list tbody tr {
-  transition: background 0.25s ease;
+.checkin-section tbody tr:hover {
+  background: #f8fafc;
+  transition: 0.3s ease;
 }
 
-.checkin-list tbody tr:hover {
-  background: #f8fbff;
-  font-family:   "IBM Plex Sans", sans-serif;
-  font-weight: 400;
-}
-
-.checkin-list input {
+.checkin-section input {
   width: 100%;
-  min-width: 180px;
+  max-width: 220px;
   padding: 10px 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #cbd5e1;
   border-radius: 10px;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: "IBM Plex Sans", sans-serif;
   outline: none;
-  transition: all 0.25s ease;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.checkin-list input:focus {
-  border-color: #2181ff;
-  box-shadow: 0 0 0 3px rgba(33, 129, 255, 0.12);
+.checkin-section input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-.checkin-list td:last-child {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.checkin-list button {
+.checkin-section button {
   border: none;
-  border-radius: 10px;
   padding: 10px 14px;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: "IBM Plex Sans", sans-serif;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.checkin-list button:hover {
-  transform: translateY(-1px);
+.checkin-section button:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
 }
 
-.checkin-list td:last-child button:nth-child(1) {
-  background: #8dfeb5;
-  color: #023f19;
+.checkin-section button:nth-child(1) {
+  background: #16a34a;
+  color: white;
 }
 
-.checkin-list td:last-child button:nth-child(1):hover {
-  background: #bbf7d0;
+.checkin-section button:nth-child(2) {
+  background: #dc2626;
+  color: white;
 }
 
-.checkin-list td:last-child button:nth-child(2) {
-  background: #f6f6f6;
-  color: #991b1b;
+.checkin-section button:nth-child(3) {
+  background: #475569;
+  color: white;
 }
 
-.checkin-list td:last-child button:nth-child(2):hover {
-  background: #fecaca;
-}
-
-.checkin-list td:last-child button:nth-child(3) {
-  background: #e3af1f;
-  color: #ffffff;
-}
-
-.checkin-list td:last-child button:nth-child(3):hover {
-  background: #1f2937;
-}
-
-.checkin-list > button {
+.manager-dashboard > button {
   margin-top: 30px;
-  background: #2181ff;
-  color: #ffffff;
+  background: #2563eb;
+  color: white;
   border: none;
+  padding: 14px 22px;
   border-radius: 12px;
-  padding: 12px 18px;
   font-size: 15px;
-  font-weight: 300;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.checkin-list > button:hover {
-  background: #1769d6;
+.manager-dashboard > button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
 }
-
-
-
 
 @media (max-width: 768px) {
   .manager-dashboard {
-    padding: 24px 14px;
+    padding: 16px;
   }
 
-  .manager-dashboard h1 {
-    font-size: 28px;
+  .checkin-section {
+    padding: 18px;
   }
 
-  .checkin-list {
-    padding: 20px;
-    border-radius: 16px;
+  .checkin-section h2 {
+    font-size: 20px;
   }
 
-  .checkin-list h2 {
-    font-size: 21px;
+  .checkin-section th,
+  .checkin-section td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .checkin-section input {
+    max-width: 100%;
+  }
+
+  .checkin-section button {
+    width: 100%;
+    margin-right: 0;
   }
 }
