@@ -190,17 +190,17 @@ export default function ManagerDashboard() {
       </p>
 
       <div className="checkin-section">
-        <h2>Pending Check-ins ☑️</h2>
+        <h2>Pending Check-ins </h2>
         {renderTable(pendingCheckins, true)}
       </div>
 
       <div className="checkin-section">
-        <h2>Approved Check-ins ✅</h2>
+        <h2>Approved Check-ins </h2>
         {renderTable(approvedCheckins)}
       </div>
 
       <div className="checkin-section">
-        <h2>Rejected Check-ins ❌</h2>
+        <h2>Rejected Check-ins </h2>
         {renderTable(rejectedCheckins)}
       </div>
 
