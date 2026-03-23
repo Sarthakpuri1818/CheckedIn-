@@ -115,7 +115,7 @@ export default function StaffDashboard() {
           Home
         </button>
 
-        <button className="logout-btn" onClick={handleLogout}>
+        <button className="button-group" onClick={handleLogout}>
           Logout
         </button>
       </div>
