@@ -22,6 +22,7 @@ export default function Home(){
   <Link href="/register">
     <button className="get-started-button">Let's Get Started</button>
   </Link>
+
 </section>
 
       <div className="team">
@@ -147,13 +148,7 @@ export default function Home(){
   </video>
 </div>
 </div>
-<div className="aboutus">
-  <button className="get-started-button">
-  <Link href="/about" className="btn-link">
-    <span>About Us</span>
-  </Link>
-</button>
-</div>
+
 
 
 
