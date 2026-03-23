@@ -50,7 +50,7 @@ const handleLogin = async(e: React.FormEvent<HTMLFormElement>)=>{
   return (
     <div className="staff-container">
       <div className="staff-video">
-        <video width="700" autoPlay muted loop>
+        <video autoPlay muted loop playsInline preload="metadata">
           <source
             src="/Blue Illustrative Employee Training Presentation.mp4"
             type="video/mp4"
