@@ -31,7 +31,7 @@ https://checked-in-gamma.vercel.app/
 User logs in (Staff / Manager) -> Staff performs check-in -> Manager reviews check-ins ->
 Manager approves/rejects with comments -> Data is updated in real-time
 
-**Screenshots**
+
 
 
 
